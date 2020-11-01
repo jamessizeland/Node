@@ -37,6 +37,17 @@ app.get("/contact", function (req, res) {
   });
 });
 
+app.get("/compose", function (req, res) {
+  res.render("compose");
+});
+
+// Respond to post requests
+/****************************************************************/
+app.post("/", function (req, res) {
+  console.log(req.body);
+});
+
+
 // Spin up server after everything else is initialized
 /****************************************************************/
 app.listen(3000, function () {
