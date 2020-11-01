@@ -16,19 +16,16 @@ app.use(express.static("public")); //make public folder accessible for css file
 let items = []; //list of to do items
 let workItems = [];
 
+//import local modules
+/*******************************************************/
+const date = require(__dirname + "/date.js")
+
+
 //Render each webpage when requested by the browser
 /*******************************************************/
-/*******************************************************/
-
 //Home Route
 app.get("/", function (req, res) {
-    const today = new Date();
-    const options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-    const day = today.toLocaleDateString("en-US", options);
+    const day = date.getDate();
     res.render("list", {
         listTitle: day,
         toDoList: items
