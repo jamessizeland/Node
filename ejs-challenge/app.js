@@ -19,9 +19,8 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 
 // Render pages when called by the client
 /****************************************************************/
-app.get("/", function (res, req) {
-  console.log(res);
-  console.log(req);
+app.get("/", function (req, res) {
+  res.render("home");
 });
 
 
