@@ -43,8 +43,8 @@ app.get("/compose", function (req, res) {
 
 // Respond to post requests
 /****************************************************************/
-app.post("/", function (req, res) {
-  console.log(req.body);
+app.post("/compose", function (req, res) {
+  console.log(req.body.blogBody);
 });
 
 
