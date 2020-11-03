@@ -3,7 +3,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const _ = require("lodash");
 const app = express();
+
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -45,7 +47,8 @@ app.get("/compose", function (req, res) {
 
 app.get("/posts/:title", function (req, res) {
   console.log(req.params.title);
-})
+  if (posts.map(e => _.lowerCase(e.title)).includes(_.lowerCase(req.params.title))) console.log("match found");
+});
 
 // Respond to post requests
 /****************************************************************/
