@@ -43,6 +43,10 @@ app.get("/compose", function (req, res) {
   res.render("compose");
 });
 
+app.get("/posts/:title", function (req, res) {
+  console.log(req.params.title);
+})
+
 // Respond to post requests
 /****************************************************************/
 app.post("/compose", function (req, res) {
