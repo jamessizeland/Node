@@ -47,7 +47,13 @@ app.get("/compose", function (req, res) {
 
 app.get("/posts/:title", function (req, res) {
   console.log(req.params.title);
-  if (posts.map(e => _.lowerCase(e.title)).includes(_.lowerCase(req.params.title))) console.log("match found");
+  const postIndex = posts.map(e => _.lowerCase(e.title)).indexOf(_.lowerCase(req.params.title))
+  if (postIndex != -1) {
+    console.log("match found");
+    res.render("post", {
+      blogPost: posts[postIndex]
+    })
+  }
 });
 
 // Respond to post requests
