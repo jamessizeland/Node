@@ -25,7 +25,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 app.get("/", function (req, res) {
   res.render("home", {
     content: homeStartingContent,
-    blogPosts: posts
+    blogPosts: posts,
   });
 });
 

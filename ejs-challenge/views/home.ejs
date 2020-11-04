@@ -6,7 +6,7 @@
 
 <% blogPosts.forEach(e => { %>
     <h2><%= e.title %></h2>
-    <p><%= e.body.substring(0,100) %>...</p>
+    <p><%= e.body.substring(0,100) %>...<a href= "/posts/<%= e.title %>" >read more</a></p>
 <% }) %>
 
 <%- include("partials/footer") %>
